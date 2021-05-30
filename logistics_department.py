@@ -18,8 +18,6 @@ sns_client = boto3.client('sns', 'us-east-1')
 iot_client = boto3.client('iot-data', 'us-east-1')
 
 class Truck:
-	
-
 	def __init__(self, id):
 		self.id = id
 		self.state = 'idle'
@@ -29,7 +27,7 @@ class Truck:
 		self.cert = '{}.crt'.format(id)
 		self.key = '{}.key'.format(id)
 		self.root_ca = 'rootCA.crt'
-		self.awsiot_endpoint = 'a1qbqmv22olc5o-ats.iot.us-east-1.amazonaws.com'
+		self.awsiot_endpoint = 'a28cyw17yatrg-ats.iot.us-east-1.amazonaws.com'
 		self.connect_to_awsiot()
 		
 	def connect_to_awsiot(self):
@@ -134,7 +132,7 @@ class Truck:
 	'''
 
 def trace_delivery_state(truck_list):
-	abnormal_topic_arn = 'arn:aws:sns:us-east-1:414491172781:Delivery_Abnormal_Topic'
+	abnormal_topic_arn = 'arn:aws:sns:us-east-1:378130993847:test'
 	while True:
 		# Poll for the states of working trunks
 		for truck in truck_list:
