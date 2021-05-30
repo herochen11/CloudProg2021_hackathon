@@ -12,6 +12,7 @@ dynamodb_client = boto3.client('dynamodb', 'us-east-1')
 sqs_client = boto3.client('sqs', 'us-east-1')
 
 def query_recently_donation():
+	'''
 	# Scan Cooperative Restaurants to get the list of restaurants
 	cooperative_dbtable_name = 'Cooperative_Restaurants'
 	cooperative_dbtable = dynamodb_resource.Table(cooperative_dbtable_name)
@@ -26,6 +27,7 @@ def query_recently_donation():
 		cooperative_list.extend(response['Items'])
 		if not last_evaluated_key:
 			break
+	'''
 	# Query all available donation information
 	donation_dbtable_name = 'Donation_Records'
 	donation_dbtable = dynamodb_resource.Table(donation_dbtable_name)
@@ -40,24 +42,25 @@ def query_recently_donation():
 		donation_list.extend(response['Items'])
 		if not last_evaluated_key:
 			break
+	# Get all restaurants who offers donation
+	cooperative_list = []
+	for item in donation_list:
+		if item['restaurant_name'] not in cooperative_list:
+			cooperative_list.append(item['restaurant_name'])
 	# Partition the donation information based on its provider (restuarant)
 	restuarant_donation_dict = {}
 	for restuarant in cooperative_list:
 		restuarant_donation_info = {}
-		restuarant_donation_info['restaurant_name'] = restuarant['name']
-		restuarant_donation_info['restaurant_address'] = restuarant['address']
-		restuarant_donation_info['restaurant_phone'] = restuarant['phone']
-		restuarant_donation_info['restaurant_email'] = restuarant['email']
+		restuarant_donation_info['restaurant_name'] = restuarant
 		restuarant_donation_info['donation_items'] = []
-		restuarant_donation_dict[restuarant['name']] = restuarant_donation_info.copy()
-		
+		restuarant_donation_dict[restuarant] = restuarant_donation_info.copy()
+	
 	for item in donation_list:
 		item_copy = {
 			'sid': item['sid'], 
 			'product_name': item['product_name'],
 			'donation_count': int(item['donation_count']),
-			'expiration_date': item['expiration_date'],
-			'submission_date': item['submission_date']
+			'expiration_date': item['expiration_date']
 		}
 		restuarant_donation_dict[item['restaurant_name']]['donation_items'].append(item_copy)
 	
