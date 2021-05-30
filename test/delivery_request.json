@@ -1,0 +1,27 @@
+{
+	"restaurant_name": "test_restaurant",
+	"restaurant_address": "us-east-1",
+	"restaurant_phone": "0800-092-000",
+	"restaurant_email": "test@cloudprog.com",
+	"donation_items": [
+		{
+		  "sid": "70ef50055b5db43894fed3eba540053b",
+		  "product_name": "hamburger",
+		  "donation_count": 12,
+		  "expiration_date": "2021-06-03",
+		  "submission_date": "2021-05-29"
+		},
+		{
+		  "sid": "1b6d2311fafc6a1ac9edd60d111950a9",
+		  "product_name": "sandwich",
+		  "donation_count": 9,
+		  "expiration_date": "2021-05-30",
+		  "submission_date": "2021-05-29"
+		}
+	],
+	"destination_name": "test_warehouse",
+	"destination_address": "us-east-1",
+	"destination_phone": "0800-412-516",
+	"destination_email": "test@warehouse.com",
+	"sid": "5ab97776015d484e85204ddd76bbc197"
+}

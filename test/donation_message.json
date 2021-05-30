@@ -1,0 +1,63 @@
+{
+	"restaurant_name": "test_restaurant",
+	"donation_items": [
+		{
+			"product_name": "hamburger",
+			"donation_count": 10,
+			"expiration_date": "2021-06-03"
+		},
+		{
+			"product_name": "sandwich",
+			"donation_count": 15,
+			"expiration_date": "2021-06-15"
+		}
+	]
+}
+
+{
+	"restaurant_name": "mystery_restaurant",
+	"donation_items": [
+		{
+			"product_name": "mystery_food",
+			"donation_count": 4,
+			"expiration_date": "2021-06-31"
+		},
+		{
+			"product_name": "mystery_beverage",
+			"donation_count": 6,
+			"expiration_date": "2022-02-29"
+		}
+	]
+}
+
+{
+	"restaurant_name": "test_restaurant",
+	"donation_items": [
+		{
+			"product_name": "hot dog",
+			"donation_count": 8,
+			"expiration_date": "2021-06-21"
+		},
+		{
+			"product_name": "soda",
+			"donation_count": 15,
+			"expiration_date": "2021-08-31"
+		}
+	]
+}
+
+{
+	"restaurant_name": "mystery_restaurant",
+	"donation_items": [
+		{
+			"product_name": "mystery_meat",
+			"donation_count": 7,
+			"expiration_date": "2021-12-00"
+		},
+		{
+			"product_name": "mystery_candy",
+			"donation_count": 18,
+			"expiration_date": "2022-00-32"
+		}
+	]
+}
