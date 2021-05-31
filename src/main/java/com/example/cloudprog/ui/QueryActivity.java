@@ -42,7 +42,7 @@ public class QueryActivity extends AppCompatActivity {
         // Initialize the Amazon Cognito credentials provider
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
                 getApplicationContext(),
-                "us-east-1:158338ef-e40c-4e36-9b77-970a25e8c693",// Identity pool ID
+                getString(R.string.identity_pool_id),// Identity pool ID
                 Regions.US_EAST_1 // Region
         );
 
@@ -68,7 +68,7 @@ public class QueryActivity extends AppCompatActivity {
             values.add(tmp1 + ", " + tmp2 + ", " + tmp3 + ", " + tmp4 + " "+ tmp5);
         }
         Log.v("input",values.toString());
-        Custom_adapter adapter = new Custom_adapter(values,this,getApplicationContext(),getString(R.string.queue_name));
+        Custom_adapter adapter = new Custom_adapter(values,this,getApplicationContext(),getString(R.string.queue_name),getString(R.string.identity_pool_id));
         listView.setAdapter(adapter);
     }
 }

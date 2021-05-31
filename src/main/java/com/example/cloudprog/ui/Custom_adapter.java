@@ -29,12 +29,13 @@ public class Custom_adapter extends BaseAdapter {
     private Context context;
     private Context activity_context;
     private String sqs_name;
-
-    public Custom_adapter(ArrayList<String> list, Context context,Context context2, String name) {
+    private String identity_pool_id;
+    public Custom_adapter(ArrayList<String> list, Context context,Context context2, String name,String id) {
         this.list = list;
         this.context = context;
         this.activity_context = context2;
         this.sqs_name = name;
+        this.identity_pool_id = id;
         Log.v("debug","initialize");
     }
 
@@ -64,7 +65,7 @@ public class Custom_adapter extends BaseAdapter {
         // Initialize the Amazon Cognito credentials provider
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
                 activity_context,
-                "us-east-1:158338ef-e40c-4e36-9b77-970a25e8c693",// Identity pool ID
+                identity_pool_id,// Identity pool ID
                 Regions.US_EAST_1 // Region
         );
         final AmazonSQSClient sqsClient = new AmazonSQSClient(credentialsProvider.getCredentials());

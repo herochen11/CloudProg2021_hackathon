@@ -3,4 +3,5 @@
     <string name="bucket_name">cloudprog-hw3-109062618</string>
     <string name="queue_name">nthu-109062618</string>
     <string name="pool_id">us-east-1_okYrzNWN6</string>
+    <string name="identity_pool_id">us-east-1:158338ef-e40c-4e36-9b77-970a25e8c693</string>
 </resources>

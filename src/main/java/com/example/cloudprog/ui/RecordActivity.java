@@ -42,7 +42,7 @@ public class RecordActivity extends AppCompatActivity {
         // Initialize the Amazon Cognito credentials provider
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
                 getApplicationContext(),
-                "us-east-1:158338ef-e40c-4e36-9b77-970a25e8c693",// Identity pool ID
+                getString(R.string.identity_pool_id),// Identity pool ID
                 Regions.US_EAST_1 // Region
         );
 
